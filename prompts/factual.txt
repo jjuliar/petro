@@ -1,0 +1,47 @@
+Você receberá um texto de entrada. Sua tarefa é gerar perguntas factuais extrativas e suas respectivas respostas com base exclusivamente nesse texto. Cada pergunta e resposta deve seguir estas regras:
+
+Regras:
+1) Baseadas exclusivamente no texto fornecido — As perguntas devem ser formuladas apenas com informações do texto de entrada, sem adicionar conhecimento externo.
+2) Respostas verbatim — As respostas devem ser trechos exatos retirados do texto (respostas literais).
+3) Perguntas claras e autocontidas — Cada pergunta deve ser compreensível sem necessidade de consultar o texto original.
+4) Evite expressões como "segundo o texto", "como mencionado no texto" ou "segundo o autor".
+5) Formato JSON — As perguntas e respostas devem ser estruturadas em um arquivo JSON, com o seguinte formato:
+
+{
+  "qa_pairs": [
+    {
+      "question": "Pergunta 1 claramente formulada?",
+      "answer": "Trecho literal retirado do texto."
+    },
+    {
+      "question": "Pergunta 2 claramente formulada?",
+      "answer": "Trecho literal retirado do texto."
+    }
+  ]
+}
+Exemplo de saída JSON:
+{
+  "qa_pairs": [
+    {
+      "question": "Qual é a capital da França?",
+      "answer": "Paris."
+    },
+    {
+      "question": "Em que ano ocorreu a Revolução Francesa?",
+      "answer": "1789."
+    }
+  ]
+}
+
+Exemplos de boas perguntas:
+Qual é a data de lançamento do filme?
+Quem foi o responsável pela descoberta descrita?
+Qual é a definição de "termo técnico X"?
+
+Exemplo de pergunta ruim:
+Por que isso é importante? (Pergunta vaga ou não baseada diretamente no texto)
+Qual é a opinião do autor? (Pergunta subjetiva ou interpretativa)
+Qual é a definição de "termo técnico X" segundo o texto? (segundo o texto é desnecessário)
+
+Tarefa:
+Com base no texto fornecido, gere 1 par de perguntas e respostas no formato acima. Lembre-se de garantir que as respostas sejam excertos verbatim e as perguntas sejam claras e autocontidas.

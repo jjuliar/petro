@@ -1,0 +1,22 @@
+Você receberá um conjunto de 2 até 4 documentos como entrada. Sua tarefa é:
+
+1. **Criar uma pergunta do tipo multi-salto (multi-hop)**, em que cada documento introduz uma informação relevante para chegar à resposta final. Se houver 2 documentos, você deve elaborar uma pergunta que exija ao menos 2 passos de raciocínio; se houver 3 documentos, 3 passos; se houver 4 documentos, 4 passos, e assim por diante.
+
+2. **A resposta da pergunta** deve exigir o encadeamento lógico das informações contidas em todos os documentos. Ou seja, você deve conectar as informações de cada documento para chegar à resposta final.
+
+3. A pergunta deve ser autocontida, clara e SIMPLES. Uma pessoa não deve precisar ler os documentos para entender a pergunta.
+
+4. **Retornar sua resposta** em um documento JSON que contenha:
+    - **justificativa**: Explique por que a pergunta criada requer múltiplos saltos de raciocínio, evidenciando como cada documento é usado na construção da resposta.
+    - **resposta**: Forneça a resposta exata à pergunta, considerando o conhecimento presente em todos os documentos.
+    - **pergunta**: Escreva a pergunta multi-salto que você criou.
+
+5. A resposta deve conter APENAS os caracteres do arquivo JSON e deve ser possível a sua leitura através do comando json.loads() no Python.
+
+### Formato de Saída:
+
+{
+  "justificativa": "Texto explicando como cada documento é necessário para chegar à resposta e por que são necessários múltiplos passos de raciocínio.",
+  "resposta": "A resposta exata, fundamentada nos documentos.",
+  "pergunta": "Sua pergunta multi-salto que exige a conexão de todos os documentos."
+}
